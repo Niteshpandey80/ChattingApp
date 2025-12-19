@@ -1,3 +1,4 @@
+import { generateToken } from "../lib/util.js";
 import User from "../models/User";
 
 export const signup = async (req,res)=>{
@@ -15,7 +16,7 @@ export const signup = async (req,res)=>{
         const newUser = await User.create({
             fullName , email , password:hashedPassword , bio
         });
-        
+        const token = generateToken(newUser)
     } catch (error) {
         
     }
