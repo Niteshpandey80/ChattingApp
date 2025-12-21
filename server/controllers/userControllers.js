@@ -23,3 +23,10 @@ export const signup = async (req,res)=>{
         res.json({success:false  , message:error.message}) 
     }
 }
+export const login=async(req,res)=>{
+    try {
+        const { email , password} = req.body ; 
+    } catch (error) {
+        
+    }
+}
