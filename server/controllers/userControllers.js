@@ -27,7 +27,10 @@ export const login=async(req,res)=>{
     try {
         const { email , password} = req.body ; 
         const userData = await User.findOne({email})
-        
+        const ispasswordcorrect = await bcrypt.compare(process , userData.password);
+        if(!ispasswordcorrect){
+           return res.json({success:false , message:"Invailed credentials"})
+        }
     } catch (error) {
         
     }
