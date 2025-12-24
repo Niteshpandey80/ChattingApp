@@ -31,7 +31,10 @@ export const login=async(req,res)=>{
         if(!ispasswordcorrect){
            return res.json({success:false , message:"Invailed credentials"})
         }
+        const token = generateToken(userData._id)
+        res.json({success:true , userData, token , message:"Login SuccessFull"})
     } catch (error) {
-        
+        console.log(error.message);
+        res.json({success:false , message:error.message})
     }
 }
