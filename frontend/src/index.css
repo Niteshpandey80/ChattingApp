@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @import "tailwindcss";
+@source "./index.html";
+@source "./src/**/*.{js,ts,jsx,tsx}";
 *{
    font-family: "Outfit", sans-serif;
 }
